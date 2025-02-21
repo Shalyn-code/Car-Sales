@@ -11,7 +11,4 @@ Instructions to launch on a local machine:
     and then fork into personal repository.
 
 
-
-[def]: image-2.png
-
     2. Link Github repository to render and create new web service.
