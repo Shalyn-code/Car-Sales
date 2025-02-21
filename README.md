@@ -4,7 +4,7 @@ This project was created to compare listings of vehicles. At the end of the onli
 
 Instructions to launch on a local machine:
     1. Scan QR code below:
-    ![alt text][def]
+    ![alt text](image.png)
 
     If unsuccessful, follow this link: 
         https://github.com/Shalyn-code/Car-Sales.git
