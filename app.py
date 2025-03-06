@@ -27,7 +27,6 @@ fig.update_layout(xaxis_title='Year of Vehicle')
 fig.show()
 
 event = st.plotly_chart(fig, key='type', on_select='rerun')
-event.selection
 
 others = ['coupe', 'hatchback', 'wagon', 'minivan', 'other', 'offroad', 'bus']
 sedan = st.checkbox('Sedan')
@@ -41,22 +40,22 @@ pickup = st.checkbox('Pickup')
 filtered_df = pd.DataFrame()
 
 if sedan:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == 'sedan'])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'sedan']])
 
 if suv:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == 'SUV'])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'SUV']])
 
 if truck:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == 'truck'])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'truck']])
 
 if pickup:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == 'van'])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'van']])
 
 if convertible:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == 'convertible'])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'convertible']])
 
 if others:
-    filtered_df = filtered_df.append(vehicles[vehicles['type'] == others])
+    filtered_df = pd.concat([filtered_df, vehicles[vehicles['type'] == 'others']])
 
 # Display the filtered DataFrame
 st.write(filtered_df[['price', 'model_year', 'model']])
