@@ -29,12 +29,13 @@ fig.show()
 event = st.plotly_chart(fig, key='type', on_select='rerun')
 event.selection
 
-others = ['pickup', 'coupe', 'hatchback', 'wagon', 'minivan', 'other', 'offroad', 'bus']
+others = ['coupe', 'hatchback', 'wagon', 'minivan', 'other', 'offroad', 'bus']
 sedan = st.checkbox('Sedan')
 suv = st.checkbox('SUV')
 truck = st.checkbox('Truck')
 van = st.checkbox('Van')
 convertible = st.checkbox('Convertible')
+pickup = st.checkbox('Pickup')
 
 # Filter DataFrame based on selected checkboxes
 filtered_df = pd.DataFrame()
